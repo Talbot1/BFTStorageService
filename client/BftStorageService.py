@@ -1,4 +1,4 @@
-import xmlrpclib
+import xmlrpc
 import socket
 import json
 from KVS import KVS
@@ -55,7 +55,7 @@ def delete(key):
 			status = True
 			responses += 1
 		except (socket.error):
-			print "error"
+			print ("error")
 		finally:
 			i += 1
 	if responses < (f_servers * 2 +1) :
@@ -82,7 +82,7 @@ def read(key):
 			if count >= f_servers + 1:
 				return status
 		except (socket.error):
-			print "error"
+			print ("error")
 		finally:
 			i += 1
 	raise Exception('RemoteOperationException', 'Unable to perform the operation on a majority of storages. Expect errors while reading data.')
@@ -111,7 +111,7 @@ def list():
 			if count >= f_servers + 1:
 				return status
 		except (socket.error):
-			print "error"
+			print ("error")
 		finally:
 			i += 1
 	raise Exception('RemoteOperationException', 'Unable to perform the operation on a majority of storages. Expect errors while reading data.')
