@@ -1,5 +1,5 @@
-import xmlrpclib
-from SimpleXMLRPCServer import SimpleXMLRPCServer
+import xmlrpc
+from xmlrpc.server import SimpleXMLRPCServer
 import json
 import KVSHandler as handler
 
@@ -26,7 +26,7 @@ def read(key):
 	return handler.read(key)
 
 server = SimpleXMLRPCServer((ip, port), allow_none=True)
-print "Listening on port " + str(port) +  "..."
+print ("Listening on port " + str(port) +  "...")
 
 server.register_function(write, "write")
 server.register_function(delete, "delete")
