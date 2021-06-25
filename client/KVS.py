@@ -1,4 +1,4 @@
-import xmlrpclib as rpc_handle
+import xmlrpc as rpc_handle
 class KVS:
 	def __init__(self, ip, port):
 		self.ip = ip
